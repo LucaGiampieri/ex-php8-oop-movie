@@ -6,25 +6,25 @@ class Movie
     public $title;
     public $director;
     public $year;
-    public $genre;
+    public $genres;
 
     //costruttore
-    public function __construct($title, $director, $year, $genre)
+    public function __construct($title, $director, $year, array $genres)
     {
         //passiamo i valori alle variaibli di istnza tramite il costruttore
         $this -> title = $title;
         $this -> director = $director;
         $this -> year = $year;
-        $this -> genre = $genre;
+        $this -> genres = $genres;
     }
 
     //metodo
     public function centurySelector()
     {
         if ($this->year < 2000) {
-            return $this->title . "<p> è un film del XX secolo</p>";
+            return $this->title . " è un film del XX secolo";
         } else {
-            return $this->title . "<p> è un film del XXI secolo</p>";
+            return $this->title . " è un film del XXI secolo";
         }
     }
 
