@@ -2,6 +2,9 @@
 
 class Movie
 {
+    //attivazione del trait Rateable
+    use Rateable;
+
     //variabili di istanza
     public $title;
     public $director;
