@@ -1,34 +1,14 @@
 <?php
 
-class Movie
-{
-    //variabili di istanza
-    public $title;
-    public $director;
-    public $year;
-    public $genre;
+require_once "./Models/Movie.php";
 
-    //costruttore
-    public function __construct($title, $director, $year, $genre)
-    {
-        //passiamo i valori alle variaibli di istnza tramite il costruttore
-        $this -> title = $title;
-        $this -> director = $director;
-        $this -> year = $year;
-        $this -> genre = $genre;
-    }
-
-    //metodo
-    public function centurySelector()
-    {
-        if ($this->year < 2000) {
-            echo $this->title . "<p> è un film del XX secolo</p>";
-        } else {
-            echo $this->title . "<p> è un film del XXI secolo</p>";
-        }
-    }
-
-}
+$movies = [
+    new Movie("Il Padrino", "Francis Ford Coppola", 1972, "Crime"),
+    new Movie("Matrix", "Wachowski", 1999, "Sci-fi"),
+    new Movie("Inception", "Christopher Nolan", 2010, "Sci-fi"),
+    new Movie("Parasite", "Bong Joon-ho", 2019, "Thriller"),
+    new Movie("Pulp Fiction", "Quentin Tarantino", 1994, "Crime"),
+];
 
 ?>
 
@@ -40,6 +20,19 @@ class Movie
     <title>ex-php8-oop-movie</title>
 </head>
 <body>
-    
+
+<ul>
+<?php
+foreach ($movies as $movie) {
+    echo "<hr>";
+    foreach ($movie as $data) {
+        echo "<li> $data </li>";
+    }
+    echo "<hr>";
+}
+?>
+</ul>  
+
+
 </body>
 </html>
