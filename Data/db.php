@@ -17,6 +17,7 @@ $movies = [
     $m3 = new Movie("Inception", "Christopher Nolan", 2010, [$scifi, $thriller]),
     $m4 = new Movie("Parasite", "Bong Joon-ho", 2019, [$thriller, $drama]),
     $m5 = new Movie("Pulp Fiction", "Quentin Tarantino", 1994, [$crime, $drama, $thriller]),
+    $m6 = new Movie("Gangs of New York", "Martin Scorzese", 2002, [$crime, $drama, $thriller]),
 ];
 
 $m1->setRating(10);

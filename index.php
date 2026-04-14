@@ -9,33 +9,24 @@ require_once "./Data/db.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>ex-php8-oop-movie</title>
 </head>
-<body>
+<body class="bg-dark text-light">
 
-<h1>Lista film</h1>
-
-<ul>
-<?php
-foreach ($movies as $movie) {
-    echo "<hr>";
-    echo "<li>Titolo: {$movie -> title}</li>";
-    echo "<li>Regista: {$movie -> director}</li>";
-    echo "<li>Anno: {$movie -> year}</li>";
-    echo "<li>Generi: ";
-    echo "<ul>";
-    foreach ($movie->genres as $genre) {
-        echo "<li>" . $genre->genre . "</li>";
-    }
-    echo "</ul>";
-    echo "</li>";
-    echo "<li>Voto: " . $movie->getRating() . "</li>";
-    echo "<li>{$movie->centurySelector()}</li>";
-    echo "<hr>";
-}
+<div class="container py-4">
+    <header>
+            <?php
+            require_once "./Components/header.php"
 ?>
-</ul>  
+    </header>
+    <main>
+        <?php
+            require_once "./Components/main.php"
+?>
+    </main>
 
+</div>
 
 </body>
 </html>
